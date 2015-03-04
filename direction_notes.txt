@@ -1,0 +1,78 @@
+API to be used in order:
+=======================
+https://developers.google.com/maps/documentation/distancematrix/#DistanceMatrixRequests
+https://developers.google.com/maps/documentation/javascript/examples/directions-waypoints
+
+
+First Request:
+==============
+Origin:
+
+
+Destination:
+Kazhipattur+Chennai+IN+603103
+Kanathur+Chennai+IN+603103
+Thoraipakkam+Chennai+IN+600097
+
+http://maps.googleapis.com/maps/api/distancematrix/json?origins=Chromepet Railway Station + Chennai + IN + 600044&destinations=Kazhipattur+Chennai+IN+603103|Kanathur+Chennai+IN+603103|Thoraipakkam+Chennai+IN+600097
+
+Selected:Thoraipakkam+Chennai+IN+600097
+
+
+Second Request:
+===============
+Origin:
+Thoraipakkam+Chennai+IN+600097
+
+Destination:
+Kazhipattur+Chennai+IN+603103
+
+
+
+http://maps.googleapis.com/maps/api/distancematrix/json?origins=Thoraipakkam+Chennai+IN+600097&destinations=Kazhipattur+Chennai+IN+603103|Kanathur+Chennai+IN+603103
+
+Selected:Kanathur+Chennai+IN+603103
+
+
+Optimal Route:
+=============
+Chromepet+Chennai+IN+600044
+Thoraipakkam+Chennai+IN+600097
+Kazhipattur+Chennai+IN+603103
+Kanathur+Chennai+IN+603103
+Chromepet Railway Station + Chennai + IN + 600044
+
+
+
+Driving Directions Request Param:
+===============================
+
+{
+  origin: "Chromepet+Chennai+IN+600044",
+  destination: "Chromepet+Chennai+IN+600044",
+  waypoints: [
+    {
+      location:"Thoraipakkam+Chennai+IN+600097",
+      stopover:true
+    },{
+      location:"Kazhipattur+Chennai+IN+603103",
+      stopover:true
+    },{
+      location:"Kanathur+Chennai+IN+603103",
+      stopover:true
+    }],
+  provideRouteAlternatives: false,
+  travelMode: google.maps.TravelMode.DRIVING
+ 
+}
+
+Others:
+======
+
+path=color:0x0000ff|weight:5|Thoraipakkam+Chennai+IN+600097|Kazhipattur+Chennai+IN+603103|Kanathur+Chennai+IN+603103
+markers=markerStyles|markerLocation1| markerLocation2|.
+markers=color:blue|Thoraipakkam+Chennai+IN+600097
+
+http://maps.googleapis.com/maps/api/staticmap?&size=5000x1000&maptype=roadmap&path=color:0xff0000ff|weight:10|Chromepet+Chennai+IN+600044|Thoraipakkam+Chennai+IN+600097|Kazhipattur+Chennai+IN+603103|Kanathur+Chennai+IN+603103|Chromepet+Chennai+IN+600044&markers=color:blue|label:A|Chromepet+Chennai+IN+600044&markers=color:blue|label:B|Thoraipakkam+Chennai+IN+600097&markers=label:C|Kazhipattur+Chennai+IN+603103&markers=color:blue|label:D|Kanathur+Chennai+IN+603103
+
+
